@@ -1,0 +1,17 @@
+.book {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 240px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.books--grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

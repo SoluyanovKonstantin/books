@@ -1,1 +1,7 @@
-<p>library works!</p>
+<section class="books--grid">
+    <div class="book" *ngFor="let book of books">
+        <img src="{{book.bookCoverURL}}" alt="">
+        <h1 class="book__name">{{book.name}}</h1>
+        <p class="book__author">{{book.author.name?.[0]}}</p>
+    </div>
+</section>

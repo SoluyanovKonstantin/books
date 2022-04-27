@@ -1,3 +1,5 @@
+Чтобы запустить проект нужно установить nodeJS, если нет, зайти в корневую папку проекта, выполнить скрипт 'npm i', затем 'ng serve' и зайти в браузере на 'http://localhost:4200/'
+
 # Books
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.

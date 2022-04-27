@@ -1,7 +1,27 @@
-<section class="books--grid">
-    <div class="book" *ngFor="let book of books">
+<button (click)="displayType = displayType === Display.grid ? Display.table : Display.grid">Change display</button>
+<button (click)="displayNewBookPopUp()">Add new book</button>
+
+<section class="books--grid" *ngIf="displayType === Display.grid; else table">
+    <div routerLink="/book/{{i}}" class="book" *ngFor="let book of books; index as i">
         <img src="{{book.bookCoverURL}}" alt="">
         <h1 class="book__name">{{book.name}}</h1>
         <p class="book__author">{{book.author.name?.[0]}}</p>
     </div>
 </section>
+<ng-template #table>
+    <section class="books--table">
+        <div class="book--table book__header--table">
+            <p class="book__name books__name--table">name</p>
+            <p class="book__genre books__genre--table">genre</p>
+            <p class="book__author books__author--table">author</p>
+            <p class="book__published books__published--table">published date</p>
+        </div>
+        <div routerLink="/book/{{i}}" class="book--table" *ngFor="let book of books; index as i">
+            <p class="book__name books__name--table">{{book.name}}</p>
+            <p class="book__genre books__genre--table">{{book.genre}}</p>
+            <p class="book__author books__author--table">{{book.author.name?.[0]}}</p>
+            <p class="book__published books__published--table">{{book.published?.date}}</p>
+        </div>
+    </section>
+</ng-template>
+<app-new-book-popup *ngIf="isDisplayNewBookPopUp$ | async"></app-new-book-popup>

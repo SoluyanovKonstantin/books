@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookComponent } from './book/book.component';
 import { LibraryComponent } from './library/library.component';
+import { NewBookPopupComponent } from './new-book-popup/new-book-popup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
-    LibraryComponent
+    LibraryComponent,
+    NewBookPopupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

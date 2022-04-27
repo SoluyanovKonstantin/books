@@ -1,0 +1,43 @@
+.book__container {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-auto-rows: 50px;
+    grid-row: 1;
+}
+
+.book__author {
+    grid-column-start: 2;
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-row: 3;
+}
+
+.book__image {
+    height: 100%;
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+}
+
+@media (max-width: 550px) {
+    .book__container {
+        grid-template-columns: 100%;
+        grid-row: 1;
+    }
+
+    .book__author {
+        grid-column-start: 1;
+        margin-top: 0;
+        grid-row: 10;
+    }
+
+    .book__image {
+        grid-row-end: 8;
+        align-items: center;
+        justify-self: center;
+    }
+
+    .book__name {
+        grid-row: 8;
+    }
+}

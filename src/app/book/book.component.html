@@ -1,1 +1,8 @@
-<p>book works!</p>
+<div class="book" *ngIf="book">
+    <div class="book__container">
+        <img *ngIf="book.bookCoverURL" src="{{book.bookCoverURL}}" alt="" class="book__image">
+        <h1 class="book__name">{{book.name}}</h1>
+        <h2 class="book__author">{{book.author?.name?.[0]}}</h2>
+    </div>
+    <p class="book__description">{{book?.description}}</p>
+</div>
